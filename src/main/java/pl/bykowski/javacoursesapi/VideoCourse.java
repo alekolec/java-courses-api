@@ -20,6 +20,8 @@ public class VideoCourse {
 
     private String image;
 
+    private String test;
+
     public VideoCourse(String name, String url, String image) {
         this.name = name;
         this.url = url;
