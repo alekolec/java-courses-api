@@ -3,6 +3,20 @@ version: 2.1
 orbs:
   maven: circleci/maven@0.0.12
 
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: openjdk:7-jdk-alpine
+        environment:
+          JDBC_DATABASE_URL: jdbc:postgresql://192.168.99.100:5432/javacoursedb
+          JDBC_DATABASE_USERNAME: root
+          JDBC_DATABASE_PASSWORD: root
+
+      - image: circleci/postgres:9.6.5-alpine-ram
+        environment:
+          POSTGRES_DB: javacoursedb
+
 workflows:
   maven_test:
     jobs:
