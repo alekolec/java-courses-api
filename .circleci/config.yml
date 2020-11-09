@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - checkout
-      - apt-get install maven
+      - install maven
 
       # Download and cache dependencies
       - restore_cache:
