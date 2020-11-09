@@ -1,6 +1,7 @@
 package pl.bykowski.javacoursesapi;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,11 @@ public class JavaCoursesApiApplicationTests {
 
     @Autowired
     private VideoCourseRepository videoCourseRepository;
+
+    @Before
+    public void clearRepository(){
+        videoCourseRepository.deleteAll();
+    }
 
     @Test
     public void checkNumberOfElements() {

@@ -32,6 +32,7 @@ public class Starter {
                         "https://www.youtube.com/watch?v=cqIu1h8FkMw",
                         "https://i.ytimg.com/vi/cqIu1h8FkMw/hqdefault.jpg");
 
+        videoCourseRepository.deleteAll();
         videoCourseRepository.save(videoCourse1);
         videoCourseRepository.save(videoCourse2);
         videoCourseRepository.save(videoCourse3);
