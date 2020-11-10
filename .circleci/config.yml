@@ -5,13 +5,13 @@ jobs:
     docker:
       - image: openjdk:7-jdk-alpine
           environment:
-            JDBC_DATABASE_URL: jdbc:postgresql://localhost:5432/javacoursesdb
+            JDBC_DATABASE_URL: jdbc:postgresql://localhost:5432/javacoursedb
             JDBC_DATABASE_USERNAME: root
             JDBC_DATABASE_PASSWORD: root
 
       - image: circleci/postgres:9.6.5-alpine-ram
           environment:
-            POSTGRES_DB: javacoursesdb
+            POSTGRES_DB: javacoursedb
 
     steps:
       - checkout
@@ -21,13 +21,13 @@ jobs:
     docker:
       - image: openjdk:7-jdk-alpine
           environment:
-            JDBC_DATABASE_URL: jdbc:postgresql://localhost:5432/javacoursesdb
+            JDBC_DATABASE_URL: jdbc:postgresql://localhost:5432/javacoursedb
             JDBC_DATABASE_USERNAME: root
             JDBC_DATABASE_PASSWORD: root
 
       - image: circleci/postgres:9.6.5-alpine-ram
           environment:
-            POSTGRES_DB: javacoursesdb
+            POSTGRES_DB: javacoursedb
     steps:
       - checkout
       - run: ./mvnw -Dmaven.test.skip=true package
