@@ -63,6 +63,11 @@ jobs:
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 workflows:
   version: 2
+
+  maven_test:
+    jobs:
+      - maven/test # checkout, build, test, and upload test results
+      -
   build-deploy:
     jobs:
       - build
